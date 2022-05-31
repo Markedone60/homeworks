@@ -26,13 +26,13 @@ Student.prototype.addMarks = function(...otherMarks) {
   if(this.marks === undefined){
     this.marks = [];
   }
-  otherMarks.forEach((mark) => this.marks.push(mark));
+  this.marks.push(...otherMarks);
 }
 
 Student.prototype.getAverage = function() {
-  let value = 0;
-  let sum = this.marks.forEach((item) => value += item);
-  return averageMark = sum / this.marks.length;
+  let sum = this.marks.reduce((previousValue, currentValue) => previousValue + currentValue);
+  let average = sum / this.marks.length
+  return average;
 }
 
 Student.prototype.exclude = function(reason) {
