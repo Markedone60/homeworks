@@ -76,6 +76,6 @@ class Library {
         let givenBook = this.books.find((book) => book.name === bookName);
         if (givenBook === undefined) {
             return null;
-        } else return this.books.splice(givenBook);
+        } else return this.books.splice([givenBook],1)[0];
     }
 }
